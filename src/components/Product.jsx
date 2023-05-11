@@ -17,7 +17,7 @@ function Product() {
       });
   }, [productId]);
 
-  if (Object.keys(product).length !== 0 && !product.hasOwnProperty("message")) {
+  if (product.hasOwnProperty("title") && product.hasOwnProperty("price")) {
     return (
       <div>
         <h1>Displaying a single product</h1>
