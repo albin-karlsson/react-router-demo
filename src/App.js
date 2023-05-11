@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
+import Product from "./components/Product";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // Implementerar den grundläggande funktionaliteten för routing
+    <Router>
+      <h1>Navbar</h1>
+      {/* // Håller koll på att det endast är en Route som gäller för varje sida */}
+      <Routes>
+        {/* // Våra olika sidor... */}
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/about"
+          element={<About />}
+        />
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
+        <Route
+          path="/products/:productId"
+          element={<Product />}
+        />
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
