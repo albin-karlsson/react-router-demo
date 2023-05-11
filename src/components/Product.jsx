@@ -7,16 +7,17 @@ function Product() {
   const { productId } = useParams();
   // Skapa en statevariabel och dess uppdateringsmetod, sätt variabeln till ett tomt objekt initialt
   const [product, setProduct] = useState({});
-  const [isFoundProduct, setIsFoundProduct] = useState(true);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${productId}`)
       .then((res) => res.json())
-      .then((data) => setProduct(data))
-      .catch((err) => setIsFoundProduct(false));
+      .then((data) => {
+        console.log(data);
+        setProduct(data);
+      });
   }, [productId]);
 
-  if (product) {
+  if (Object.keys(product).length !== 0 && !product.hasOwnProperty("message")) {
     return (
       <div>
         <h1>Displaying a single product</h1>
