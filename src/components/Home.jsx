@@ -17,13 +17,11 @@ function Home() {
       <h1>Home page</h1>
       <div className="grid-container">
         {products.map((p) => (
-          <div className="product">
-            <Link
-              key={p.id}
-              to={`/products/${p.id}`}
-            >
-              Link to {p.title}
-            </Link>
+          <div
+            key={p.id}
+            className="product"
+          >
+            <Link to={`/products/${p.id}`}>Link to {p.title}</Link>
           </div>
         ))}
       </div>
