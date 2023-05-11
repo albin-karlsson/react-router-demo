@@ -30,7 +30,7 @@ function Home() {
 
       <Link
         to="/about"
-        style={linkStyle}
+        style={Styles.linkStyle}
       >
         Link to About
       </Link>
