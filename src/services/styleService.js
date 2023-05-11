@@ -1,4 +1,8 @@
-export const linkStyle = {
-  color: "red",
-  textDecoration: "none",
-};
+export class Styles {
+  static linkStyle() {
+    return {
+      color: "red",
+      backgroundColor: "blue",
+    };
+  }
+}

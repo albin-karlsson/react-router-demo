@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { linkStyle } from "../services/styleService.js";
+import { Styles } from "../services/styleService.js";
 import { useEffect, useState } from "react";
 
 function Home() {
@@ -36,7 +36,7 @@ function Home() {
       </Link>
       <Link
         to="/contact"
-        style={linkStyle}
+        style={Styles.linkStyle}
       >
         Link to Contact
       </Link>
